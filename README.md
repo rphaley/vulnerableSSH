@@ -5,7 +5,7 @@
 		autoreconf
 		adduser sshd
 		groupadd sshd
-		./configure
+		./configure --prefix=/usr/sbin --sysconfdir=/etc/ssh
 		make
 		make install
 		/usr/local/sbin/sshd
