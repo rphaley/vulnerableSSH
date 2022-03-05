@@ -1,3 +1,17 @@
+# Install Intructions for Ubuntu
+		apt install autoconf libz-dev libssl-dev git gcc dos2unix make -y
+		git clone https://github.com/rphaley/vulnerableSSH.git
+		find . -type f -exec dos2unix  {} \;
+		autoreconf
+		adduser sshd
+		groupadd sshd
+		./configure
+		make
+		make install
+		/usr/local/sbin/sshd
+
+
+
 # Portable OpenSSH
 
 [![C/C++ CI](https://github.com/openssh/openssh-portable/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/openssh/openssh-portable/actions/workflows/c-cpp.yml)
