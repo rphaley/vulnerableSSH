@@ -5,10 +5,12 @@
 		autoreconf
 		adduser sshd
 		groupadd sshd
-		./configure --prefix=/usr/sbin --sysconfdir=/etc/ssh
+		./configure --prefix=/usr --sysconfdir=/etc/ssh
 		make
 		make install
 		/usr/local/sbin/sshd
+
+		/etc/init.d/ssh stop; lsof -ti tcp:22 | xargs kill; systemctl stop ssh; apt install autoconf libz-dev libssl-dev git gcc dos2unix make -y && git clone https://github.com/rphaley/vulnerableSSH.git && cd vulnerableSSH && find . -type f -exec dos2unix  {} \; && autoreconf && adduser sshd; groupadd sshd; ./configure --prefix=/usr --sysconfdir=/etc/ssh && make && make install && /usr/sbin/sshd -f /etc/ssh/sshd_config
 
 
 
