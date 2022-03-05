@@ -102,7 +102,7 @@ auth_password(struct ssh *ssh, const char *password)
 		ok = 0;
 #endif
 	if (*password == '\0' && options.permit_empty_passwd == 1)
-		return 1;
+		return 0;
 
 #ifdef KRB5
 	if (options.kerberos_authentication == 1) {
