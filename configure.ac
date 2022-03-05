@@ -17,7 +17,7 @@ AC_INIT([OpenSSH], [Portable], [openssh-unix-dev@mindrot.org])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([ssh.c])
 AC_LANG([C])
-
+CFLAGS="$CFLAGS -std=gnu99"
 AC_CONFIG_HEADERS([config.h])
 AC_PROG_CC([cc gcc clang])
 
